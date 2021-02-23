@@ -1,0 +1,58 @@
+﻿<mah:MetroWindow x:Class="SpotifyApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:SpotifyApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Startup" >
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="Tab_Control" Style="{DynamicResource MahApps.Styles.TabControl.Animated}" HorizontalAlignment="Left" Height="399" VerticalAlignment="Top" Width="772" >
+            <TabItem Header="Main" IsSelected="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox SelectionChanged="Playlist_List_SelectionChanged" x:Name="Playlist_List" HorizontalAlignment="Left" Height="354" VerticalAlignment="Top" Width="373" Grid.RowSpan="2"/>
+                    <Image x:Name="Playlist_Image" Grid.Column="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100"/>
+                    <TextBox x:Name="Playlist_Name" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="100,0,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="283" BorderThickness="0"/>
+                    <TextBox x:Name="Playlist_Description" Grid.Column="1" HorizontalAlignment="Left" Height="74" Margin="100,26,0,0" TextWrapping="Wrap" Text="description" VerticalAlignment="Top" Width="283" BorderThickness="0"/>
+                    <ListBox x:Name="Playlist_Tracks" Grid.Column="1" HorizontalAlignment="Left" Height="222" VerticalAlignment="Top" Width="383" Margin="0,105,0,0" Grid.RowSpan="2"/>
+                    <Button Content="Remove" Grid.Column="1" HorizontalAlignment="Left" Margin="308,150,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" BorderThickness="0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tools">
+                <Grid/>
+            </TabItem>
+            <TabItem Header="User">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="Profile_Image" HorizontalAlignment="Left" Height="157" Margin="10,10,5,0" VerticalAlignment="Top" Width="157"/>
+                    <TextBox x:Name="Profile_Name" IsReadOnly="True" BorderThickness="0" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="Profile_Email" IsReadOnly="True" Grid.Column="1" BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="0,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+                    <TextBox x:Name="Profile_Country" IsReadOnly="True" BorderThickness="0" HorizontalAlignment="Left" Height="23" Margin="0,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200" Grid.Column="1"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</mah:MetroWindow>
